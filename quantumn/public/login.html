@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Quantum - Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/login.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/footer.css'>
+</head>
+<body>
+    <header class="header">
+        <a href="/public/index.html" tabindex="0">
+            <img src="assets/icons/logo used in header.svg" alt="Quantum"/>
+        </a>
+    </header>
+    <div class="login-wrapper">
+        <form class="login">
+            <div class="login-header">
+                <a href="#" class="login-header-back" tabindex="0">
+                    <img src="assets/icons/back.svg" alt="Back Arrow"/>
+                </a>
+                <h2 class="login-header-title">Log in with Quantum</h2>
+            </div>
+            <div class="login-fields">
+                <div class="login-field login-field-radio" role="radiogroup" id="type">
+                    <div class="login-field-radio-item form-type-radio-item" name="District" role="radio" tabindex="0" aria-checked="true">
+                        <img src="assets/icons/radio-button-on.svg"/>
+                        <p>District</p>
+                    </div>
+                    <div class="login-field-radio-item form-type-radio-item" name="Independent School" role="radio" tabindex="-1" aria-checked="false">
+                        <img src="assets/icons/radio-button-off.svg"/>
+                        <p>Independent School</p>
+                    </div>
+                </div>
+                <div class="login-field login-field-select">
+                    <label for="state">State*</label>
+                    <select id="state">
+                        <option>Alabama</option>
+                    </select>
+                </div>
+                <div class="login-field login-field-select">
+                    <label for="district">District*</label>
+                    <select id="district">
+                        <option selected>Alabama School District</option>
+                    </select>
+                </div>
+                <div class="login-field login-field-text">
+                    <input type="text" placeholder="Username/Email ID*" id="username"/>
+                    <a href="#">FORGOT USERNAME?</a>
+                </div>
+                <div class="login-field login-field-text">
+                    <input type="password" placeholder="Password*" id="password"/>
+                    <div class="login-field-overlay-icon" id="show-password" tabindex="0" role="checkbox" aria-label="Show Password" aria-checked="false">
+                        <img src="assets/icons/preview-hide.png" alt="Show Password"/>
+                    </div>
+                    <a href="#">FORGOT PASSWORD?</a>
+                </div>
+                <div class="login-field login-field-checkboxes">
+                    <div class="login-field-checkbox-item login-field-checkbox" tabindex="0" role="checkbox" aria-labelledby="remember-me" aria-checked="false" id="remember-me">
+                        <img src="assets/icons/checkbox-unchecked.svg"/>
+                        <p id="remember-me">Remember Me</p>
+                    </div>
+                </div>
+            </div>
+            <input type="button" value="LOG IN" class="login-button" id="login-button"/>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer-top">
+            <ul class="footer-top-links">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <a href="/public/index.html">
+                <img src="assets/icons/logo used in footer.svg" alt="Quantum"/>
+            </a>
+            <p>
+                <span>Copyright <span aria-hidden="true">©</span> 2020-2021</span>
+                <b>Zeus Systems Pvt. Ltd.</b>
+                <span>All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+    <script src="bundle.js"></script>
+</body>
+</html>

@@ -1,0 +1,199 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+.dashboard-wrapper {
+    min-height: calc(100vh - 10rem);
+    background-color: $background-light;
+    padding: 1.5rem 0.5rem;
+}
+.dashboard {
+    width: min(1024px, 100%);
+    margin: auto;
+    .dashboard-categories {
+        @include flex(row, stretch, space-around, 0);
+        background-color: $green-light;
+        border-radius: 2px;
+        .dashboard-category {
+            @include flex(row, center, center, 0.5rem);
+            flex: 1;
+            padding: 1.125rem;
+            h2 {
+                @include flex(row, center, flex-start, 0.5rem);
+                font-size: 1.5rem;
+            }
+            span {
+                font-size: 1.25rem;
+            }
+        }
+        .dashboard-category-selected {
+            border-bottom-left-radius: 2px;
+            border-bottom: 4px solid $border-dark;
+        }
+    }
+    .dashboard-filters {
+        @include flex(row, center, flex-start, 0);
+        margin: 1.5rem 0px 1.25rem 0px;
+        p {
+            color: $grey-light;
+            font-size: 0.875rem;
+            align-self: flex-end;
+        }
+        .dashboard-filter {
+            @include flex(row, center, flex-start, 0);
+            position: relative;
+            margin-left: auto;
+            label {
+                font-weight: 600;
+                color: $grey-light;
+                font-size: 0.75rem;
+            }
+            img {
+                transition: 0.3s all ease;
+                margin-left: 1.5rem;
+                &:hover {
+                    transform: translateY(-0.125rem);
+                }
+            }
+            select {
+                height: 28px;
+                width: 150px;
+                margin-left: 0.375rem;
+                font-size: 1rem;
+                font-weight: bold;
+                border: 0px;
+                background-color: transparent;
+                border-bottom: 1px solid $border-light;
+                transition: 0.3s all ease;
+                &:hover {
+                    padding: 0px 0.5rem;
+                    background-color: $grey-extra-light;
+                }
+            }
+        }
+    }
+    .dashboard-items {
+        border-top: 1px solid $border-light;
+        padding: 1rem 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        .dashboard-item {
+            position: relative;
+            background-color: $white;
+            padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+            border-radius: 2px;
+            .dashboard-item-top {
+                @include flex(row, flex-start, flex-start, 1rem);
+                position: relative;
+                .dashboard-item-top-info {
+                    width: 100%;
+                    p {
+                        @include flex(row, stretch, flex-start, 0);
+                        font-weight: 600;
+                        small {
+                            @include flex(row, stretch, flex-start, 0.125rem);
+                            font-size: 0.75rem;
+                            color: $grey;
+                            padding-left: 0.5rem;
+                            b {
+                                color: $black;
+                            }
+                            span {
+                                color: $green-dark;
+                            }
+                        }
+                        &:nth-child(2), &:nth-child(3), &:nth-child(5) {
+                            margin-top: 0.5rem;
+                        }
+                        .dashboard-item-top-info-no-space {
+                            padding-left: 0px !important;
+                        }
+                        .dashboard-item-top-info-border {
+                            border-right: 1px solid $border-light;
+                            padding-right: 0.5rem;
+                            padding-left: 0px !important;
+                        }
+                    }
+                    select {
+                        margin-top: 1rem;
+                        border: 0px;
+                        width: 100%;
+                        border-bottom: 1px solid $border;
+                        height: 28px;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        transition: 0.3s all ease;
+                        &:hover {
+                            padding: 0px 0.5rem;
+                            background-color: $grey-extra-light;
+                        }
+                    }
+                    select[disabled] {
+                        &:hover {
+                            padding: initial;
+                            background-color: initial;
+                        }
+                    }
+                }
+                .dashboard-item-top-overlay-icon {
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                }
+            }
+            .dashboard-item-bottom {
+                border-top: 1px solid $border-light;
+                margin-top: 1rem;
+                padding: 1rem 1.5rem 0px 1.5rem;
+                .dashboard-item-bottom-icons {
+                    @include flex(row, stretch, space-between, 0);
+                    .dashboard-item-bottom-icon-disabled img {
+                        opacity: 0.4;
+                        &:hover {
+                            transform: scale(1);
+                        }
+                    }
+                    img {
+                        transition: 0.1s all ease;
+                        &:hover {
+                            transform: scale(1.15);
+                        }
+                    }
+                }
+            }
+            .dashboard-item-expired {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: $red-light;
+                color: $red;
+                font-size: 0.625rem;
+                font-weight: 600;
+                padding: 0.25rem;
+            }
+        }
+    }
+    @media (max-width: 926px) {
+        .dashboard-items {
+            grid-template-columns: 1fr;
+        }
+        .dashboard-item {
+            margin: auto;
+            width: min(550px, 100%);
+        }
+    }
+    @media (max-width: 432px) {
+        .dashboard-filters {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .dashboard-filters p, .dashboard-filter {
+            align-self: flex-start;
+            margin-left: 0px;
+        }
+        .dashboard-items .dashboard-item .dashboard-item-top {
+            align-items: stretch;
+            flex-direction: column;
+        }
+    }
+}

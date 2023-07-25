@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Quantum - Dashboard</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/index.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/dashboard.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/header.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles/footer.css'>
+</head>
+<body>
+    <header class="header">
+        <a href="/public/index.html" tabindex="0">
+            <img src="assets/icons/logo used in header.svg" alt="Quantum"/>
+        </a>
+        <nav>
+            <ul class="header-links">
+                <li class="header-link-selected"><a href="#">DASHBOARD</a></li>
+                <li><a href="#">CONTENT</a></li>
+                <li><a href="#">USERS</a></li>
+                <li><a href="#">REPORTS</a></li>
+                <li><a href="#">ADMIN</a></li>
+            </ul>
+        </nav>
+        <ul class="header-actions">
+            <li>
+                <a href="#" aria-label="Notifications">
+                    <img src="assets/icons/alerts.svg" alt="Bell"/>
+                    <p class="header-actions-overlay">2</p>
+                </a>
+                <div class="header-actions-notifications dropdown-child">
+                    <ul>
+                        <li>
+                            <div class="header-actions-list-content">
+                                <p>License for Introduction to Algebra has been assigned to your school</p>
+                                <img src="assets/icons/checkbox-checked-circle.svg" alt="Checkbox checked"/>
+                            </div>
+                            <div class="header-actions-list-footer">
+                                <span class="header-actions-list-footer-end">15-Sep-2018 at 07:21 pm</span>
+                            </div>
+                        </li>
+                        <li class="header-actions-list-seen">
+                            <div class="header-actions-list-content">
+                                <p>Lesson 3 Practice Worksheet overdue for Amy Santiago</p>
+                                <img src="assets/icons/minus.png" alt="Hyphen"/>
+                            </div>
+                            <div class="header-actions-list-info">
+                                <span>Course: <b>Mathematics</b></span>
+                            </div>
+                            <div class="header-actions-list-footer">
+                                <span class="header-actions-list-footer-end">15-Sep-2018 at 07:21 pm</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="header-actions-buttons">
+                        <button>SHOW ALL</button>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a href="#" aria-label="Announcements">
+                    <img src="assets/icons/announcements.svg" alt="Horn"/>
+                    <p class="header-actions-overlay">1</p>
+                </a>
+                <div class="header-actions-announcements dropdown-child">
+                    <ul>
+                        <li>
+                            <div class="header-actions-list-info">
+                                <span>PA: <b>Wilson Kumar</b></span>
+                                <img src="assets/icons/checkbox-checked-circle.svg" alt="Checkbox checked"/>
+                            </div>
+                            <p class="header-actions-list-content">No classes will be held on 21st Nov</p>
+                            <div class="header-actions-list-footer">
+                                <img src="assets/icons/attachment.png" alt="Pin"/>
+                                <span>2 files are attached</span>
+                                <span class="header-actions-list-footer-end">15-Sep-2018 at 07:21 pm</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="header-actions-buttons">
+                        <button>SHOW ALL</button>
+                        <button>CREATE NEW</button>
+                    </div>
+                </div>
+            </li>
+            <li class="header-actions-avatar">
+                <a href="#" aria-label="Profile">
+                    <img src="assets/images/avatar.jpg" alt="Avatar"/>
+                    <p class="header-actions-overlay">T</p>
+                </a>
+            </li>
+        </ul>
+        <div class="header-dropdown" role="menubar">
+            <img src="assets/icons/hamburger-menu.svg" alt="Hamburger" tabindex="0" role="menuitem"/>
+            <ul class="header-links header-dropdown-links dropdown-child" role="menu">
+                <li>
+                    <div class="header-dropdown-link">
+                        <a href="#" role="menuitem">DASHBOARD</a>
+                    </div>
+                </li>
+                <li class="header-link-selected">
+                    <div class="header-dropdown-link">
+                        <a href="#" role="menuitem">CONTENT</a>
+                        <button>
+                            <img src="assets/icons/up-arrow.png" alt="Up Arrow"/>
+                        </button>
+                    </div>
+                    <ul class="header-dropdown-sublist">
+                        <li>
+                            <a href="#">COURSE CATALOG</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <div class="header-dropdown-link">
+                        <a href="#" role="menuitem">USERS</a>
+                        <button>
+                            <img src="assets/icons/down-arrow.png" alt="Down Arrow"/>
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <div class="header-dropdown-link">
+                        <a href="#" role="menuitem">REPORTS</a>
+                        <button>
+                            <img src="assets/icons/down-arrow.png" alt="Down Arrow"/>
+                        </button>
+                    </div>
+                </li>
+                <li>
+                    <div class="header-dropdown-link">
+                        <a href="#" role="menuitem">ADMIN</a>
+                        <button>
+                            <img src="assets/icons/down-arrow.png" alt="Down Arrow"/>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="dashboard-wrapper">
+        <div class="dashboard">
+            <div class="dashboard-categories">
+                <div class="dashboard-category dashboard-category-selected" role="button" tabindex="0" aria-label="Courses">
+                    <img src="assets/icons/courses.svg" alt="Book With Bookmark"/>
+                    <h2 id="course-count-heading">
+                        4 <span>Courses</span>
+                    </h2>
+                </div>
+                <div class="dashboard-category" role="button" tabindex="0" aria-label="Classes">
+                    <img src="assets/icons/classes.svg" alt="Two avatars"/>
+                    <h2>
+                        4 <span>Classes</span>
+                    </h2>
+                </div>
+            </div>
+            <div class="dashboard-filters">
+                <p id="course-count">Showing 4 of 4 courses</p>
+                <div class="dashboard-filter">
+                    <label>Sort By:</label>
+                    <select aria-label="Sort Items By">
+                        <option>Course Name</option>
+                    </select>
+                    <img src="assets/icons/sort.svg" alt="Up Arrow" role="button" tabindex="0" aria-label="Sort Descending"/>
+                </div>
+            </div>
+            <div class="dashboard-items" id="dashboard-items"></div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top">
+            <ul class="footer-top-links">
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <a href="/public/index.html">
+                <img src="assets/icons/logo used in footer.svg" alt="Quantum"/>
+            </a>
+            <p>
+                <span>Copyright © 2020-2021</span>
+                <b>Zeus Systems Pvt. Ltd.</b>
+                <span>All rights reserved.</span>
+            </p>
+        </div>
+    </footer>
+    <script src="bundle.js"></script>
+</body>
+</html>

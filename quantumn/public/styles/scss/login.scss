@@ -1,0 +1,121 @@
+@import './colors.scss';
+@import './mixins.scss';
+
+.login-wrapper {
+    @include flex(row, center, center, 0);
+    padding: 3.25rem 0px;
+    background-color: $background-light;
+    min-height: calc(100vh - 10rem);
+    .login {
+        @include flex(column, stretch, flex-start, 0);
+        background-color: $white;
+        border-top: 4px solid $blue;
+        width: min(488px, 95%);
+        padding: 1rem 2rem 1.5rem 2rem;
+        border-radius: 4px;
+        .login-header {
+            @include flex(row, center, center, 0);
+            position: relative;
+            margin-bottom: 2rem;
+            .login-header-back {
+                position: absolute;
+                top: calc(50% - 10px);
+                left: 0px;
+                width: 17px;
+                height: 26px;
+                transition: 0.3s all ease;
+                &:hover {
+                    transform: translateX(-0.125rem);
+                }
+            }
+        }
+        .login-fields {
+            @include flex(column, stretch, flex-start, 0);
+            .login-field-radio, .login-field-checkboxes {
+                @include flex(row, stretch, flex-start, 2rem);
+                flex-wrap: wrap;
+                .login-field-radio-item, .login-field-checkbox-item {
+                    @include flex(row, center, flex-start, 0.5rem);
+                    font-weight: 600;
+                }
+                &:nth-child(6) {
+                    margin-top: 1.5rem;
+                }
+            }
+            .login-field-select, .login-field-text {
+                @include flex(column, flex-start, flex-start, 0.25rem);
+                position: relative;
+                margin-top: 1.5rem;
+                input, select {
+                    height: 30px;
+                    width: 100%;
+                    border: 0px;
+                    border-bottom: 1px solid $border-light;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    position: relative;
+                    display: block;
+                    transition: 0.3s all ease;
+                    &:hover {
+                        padding: 0px 0.5rem;
+                        background-color: $grey-extra-light;
+                    }
+                }
+            }
+            .login-field-select {
+                label {
+                    font-size: 0.75rem;
+                    font-weight: 600;
+                    color: $grey;
+                }
+                &:nth-child(3) {
+                    margin-top: 2.25rem;
+                }
+            }
+            .login-field-text {
+                @include flex(column, stretch, flex-start, 0.25rem);
+                .login-field-overlay-icon {
+                    position: absolute;
+                    right: 5px;
+                    top: 7.5%;
+                    img {
+                        width: 20px;
+                    }
+                }
+                a {
+                    margin-left: auto;
+                    color: $green-dark;
+                    font-weight: 600;
+                    text-decoration: none;
+                    font-size: 0.875rem;
+                    transition: 0.3s all ease;
+                    &:hover {
+                        color: $green;
+                    }
+                }
+                &:nth-child(4) {
+                    margin-top: 3.5rem;
+                }
+                &:nth-child(5) {
+                    margin-top: 1.75rem;
+                }
+            }
+        }
+    }
+    .login-button {
+        width: 216px;
+        height: 40px;
+        border: 0px;
+        background-color: $green;
+        box-shadow: 0px 3px 5px $shadow;
+        font-size: 0.875rem;
+        font-weight: 600;
+        border-radius: 4px;
+        margin: 2rem auto auto auto;
+        transition: 0.3s all ease;
+        &:hover {
+            color: $white;
+            background-color: $green-dark;
+        }
+    }
+}
